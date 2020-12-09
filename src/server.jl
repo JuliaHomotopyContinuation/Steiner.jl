@@ -40,7 +40,7 @@ function start_server(port=3264; async=false, host="localhost")
     routes() do
         Bukdu.options("/conics", ConicsController, take_options)
         post("/conics", ConicsController, solve_conics)
-        plug(Plug.Parsers, parsers=[:json])
+        plug(Plug.Parsers, [:json])
         plug(Plug.Static, at="/", from=normpath(@__DIR__, "..", "public"))
     end
 
