@@ -1,0 +1,7 @@
+# nixpacks.toml
+
+[phases.setup]
+nixPkgs = ['julia']
+
+[start]
+cmd = "julia --project=. -e 'using Steiner; start_server()';"
