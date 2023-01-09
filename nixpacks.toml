@@ -3,5 +3,8 @@
 [phases.setup]
 nixPkgs = ['julia']
 
+[phases.build]
+cmd = ["julia --project=. -e 'using Pkg; Pkg.instantiate(); Pkg.build()'"]
+
 [start]
 cmd = "julia --project=. -e 'using Steiner; start_server()';"
